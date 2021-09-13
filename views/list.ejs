@@ -1,0 +1,31 @@
+<%- include("header") -%>
+
+<div class="container">
+    <h1>Things to Do👨‍💻</h1>
+</div>
+    
+<div class="container box1">
+ 
+  <% newListItems.forEach(function(item){ %>
+    <form action="/delete"  method="post">
+        <div class="item">
+            <div class="round">
+                <input type="checkbox" name="checkbox" value="<%=item._id %>"onChange="this.form.submit()"id="checkbox">
+                <label for="checkbox"></label>
+            </div>
+            <p><%= item.name %></p>
+            <br>
+        </div>
+    </form>
+    <% }); %>
+
+    <form class="item" action="/" method="post"   >
+     <input type="text" name="n" placeholder="new"><hr>
+     <button style="border-radius:20px; color:#FFF;" id="b" type="submit" class="btn btn-warning"><span id="s2"></span>+</span></button>
+    </form>
+</div>
+
+<div class=" container text-center">
+    Made with ❤️ by Ishika Gupta <br>
+    Connect with me on <a href="https://ishikaa-2302.netlify.app/" target="_blank">@ishikaa_2302</a>
+</div>
